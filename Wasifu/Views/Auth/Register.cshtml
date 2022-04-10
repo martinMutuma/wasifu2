@@ -1,0 +1,105 @@
+﻿@model Wasifu.Dtos.LoginDto;
+@using Wasifu.Enums
+
+
+<section class="h-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-5">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 ">
+                        <h3 class="mb-4 pb-2">Sign Up</h3>
+                        <div class="alert alert-danger p-1 alert-dismissible" id="ErrorBox" role="alert" style="display:none">
+                            <ul>
+                            </ul>
+                        </div>
+
+                        <form name="registration">
+                            <div class="row">
+                                <div class="col-md-6 mb-2">
+
+                                    <div class="form-outline">
+                                        @Html.TextBoxFor(m=>m.FirstName, new {@class="form-control form-control-lg"})
+                                        <label class="form-label" for="FirstName">First Name</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-2">
+
+                                    <div class="form-outline">
+                                        @Html.TextBoxFor(m=>m.LastName, new {@class="form-control form-control-lg"})
+                                        <label class="form-label" for="LastName">Last Name</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+
+                                <div class="col mb-2">
+
+                                    <h6 class="mb-2 pb-1">Gender: </h6>
+
+                                    <div class="form-check form-check-inline">
+                                        @Html.RadioButtonFor(m=>m.gender, 1, htmlAttributes:  new {@class="form-check-input"})
+                                        <label class="form-check-label" for="gender">Female</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        @Html.RadioButtonFor(m=>m.gender, 2, htmlAttributes:  new {@class="form-check-input"})
+                                        <label class="form-check-label" for="gender">Male</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        @Html.RadioButtonFor(m=>m.gender, 3, htmlAttributes:  new {@class="form-check-input"} )
+                                        <label class="form-check-label" for="gender">Other</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 mb-2 pb-2">
+                                    <div class="form-outline">
+                                        @Html.TextBoxFor(m=>m.Email, new {@class="form-control form-control-lg", @type="email"})
+                                        <label class="form-label" for="emailAddress">Email</label>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12 mb-1">
+                                    <div class="form-outline">
+                                        @Html.TextBoxFor(m=>m.Password, new {@class="form-control form-control-lg", @type="password"})
+                                        <label class="form-label" for="inputPassword">Password</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-12 mb-2">
+                                    <div class="form-outline">
+                                        @Html.TextBoxFor(m=>m.ConfirmPassword, new {@class="form-control form-control-lg", @type="password"})
+                                        <label class="form-label" for="inputPassword">Confirm Password</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class=" pt-2">
+                                <button class="btn btn-primary  float-end" id="SubmitRegistrationData" type="submit" value="Submit"> Submit </button>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <a asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+<script src="~/js/Register.js" asp-append-version="true"></script>
+
+}
