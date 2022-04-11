@@ -6,6 +6,7 @@ using Wasifu.Models;
 
 namespace Wasifu.Controllers
 {
+
     public partial class HomeController : BaseAuthenticatedController
     {
 
@@ -16,6 +17,7 @@ namespace Wasifu.Controllers
 
         public IActionResult Index()
         {
+            ViewData["Title"] = "Home";
             return View();
         }
 

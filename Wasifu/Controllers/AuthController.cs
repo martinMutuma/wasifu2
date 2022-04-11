@@ -20,6 +20,8 @@ namespace Wasifu.Controllers
         [HttpGet]
         public IActionResult Login(string returnUrl = "")
         {
+            ViewData["Title"] = "Login";
+
             LoginDto loginDto = new LoginDto();
 
             ViewData["returnUrl"] = returnUrl;
@@ -48,6 +50,7 @@ namespace Wasifu.Controllers
         [HttpGet]
         public IActionResult Register()
         {
+            ViewData["Title"] = "Register";
             return View();
         }
 
